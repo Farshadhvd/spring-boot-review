@@ -1,0 +1,22 @@
+package com.delochi.springboot.demo.mycoolapp.rest;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class FunRestController {
+    @GetMapping("/")
+    public String helloWorld() {
+        return "Hello World! Delochi is back... :)";
+    }
+
+    @GetMapping("/workout")
+    public String getDailyWorkout() {
+        return "Run HIIT and Fat Burn for 20 minutes a week dude!";
+    }
+
+    @GetMapping("/fortune")
+    public String getDailyFortune() {
+        return "Remember! You can always save the day :)";
+    }
+}
