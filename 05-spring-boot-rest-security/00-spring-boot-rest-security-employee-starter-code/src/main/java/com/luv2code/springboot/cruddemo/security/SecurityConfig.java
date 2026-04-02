@@ -45,6 +45,7 @@ public class SecurityConfig {
                 authorizationManagerRequestMatcherRegistry.requestMatchers(HttpMethod.GET, "/api/employees/**").hasRole("EMPLOYEE");
                 authorizationManagerRequestMatcherRegistry.requestMatchers(HttpMethod.POST, "/api/employees").hasRole("MANAGER");
                 authorizationManagerRequestMatcherRegistry.requestMatchers(HttpMethod.PUT, "/api/employees").hasRole("MANAGER");
+                authorizationManagerRequestMatcherRegistry.requestMatchers(HttpMethod.PATCH, "/api/employees/**").hasRole("MANAGER");
                 authorizationManagerRequestMatcherRegistry.requestMatchers(HttpMethod.DELETE, "/api/employees/**").hasRole("ADMIN");
             }
         });
