@@ -28,6 +28,17 @@
         <input type="text" th:field="*{lastName}">
     </div>
 
+    <div class="form-row">
+        <label>Country:</label>
+        <select th:field="*{country}">
+            <option th:each="c : ${countries}"
+                    th:value="${c}"
+                    th:text="${c.label}">
+            </option>
+        </select>
+    </div>
+
+
     <input type="submit" value="send"/>
 </form>
 </body>

@@ -1,5 +1,6 @@
 package com.delochi.springboot.thymeleaf.controller;
 
+import com.delochi.springboot.thymeleaf.model.Country;
 import com.delochi.springboot.thymeleaf.model.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,7 @@ public class StudentController {
         Student student = new Student();
 
         model.addAttribute("student",student);
+        model.addAttribute("countries", Country.values());
         return "student-form";
     }
     @PostMapping("/process-student")
