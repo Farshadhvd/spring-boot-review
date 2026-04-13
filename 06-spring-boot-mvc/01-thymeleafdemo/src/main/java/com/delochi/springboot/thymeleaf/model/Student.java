@@ -3,7 +3,7 @@ package com.delochi.springboot.thymeleaf.model;
 public class Student {
     private String firstName;
     private String lastName;
-    private Country country;
+    private Country country; //todo: cleaner option is to use a properties file or db in order to prevent country names to be hardcoded.
     public Student() {
     }
 
