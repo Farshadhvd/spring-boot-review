@@ -4,6 +4,8 @@ public class Student {
     private String firstName;
     private String lastName;
     private Country country; //todo: cleaner option is to use a properties file or db in order to prevent country names to be hardcoded.
+    private String favouriteLanguage;
+
     public Student() {
     }
 
@@ -29,5 +31,13 @@ public class Student {
 
     public void setCountry(Country country) {
         this.country = country;
+    }
+
+    public String getFavouriteLanguage() {
+        return favouriteLanguage;
+    }
+
+    public void setFavouriteLanguage(String favouriteLanguage) {
+        this.favouriteLanguage = favouriteLanguage;
     }
 }

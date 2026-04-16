@@ -37,7 +37,14 @@
             </option>
         </select>
     </div>
-
+    <div class="form-row">
+        <label th:each="lang : ${favouriteLanguages}">
+            <input type="radio"
+                   th:value="${#strings.capitalize(#strings.toLowerCase(lang))}"
+                   th:field="*{favouriteLanguage}"/>
+            <span th:text="${#strings.capitalize(#strings.toLowerCase(lang))}"></span>
+        </label>
+    </div>
 
     <input type="submit" value="send"/>
 </form>
