@@ -38,11 +38,22 @@
         </select>
     </div>
     <div class="form-row">
+        <label>Language:</label>
         <label th:each="lang : ${favouriteLanguages}">
             <input type="radio"
                    th:value="${#strings.capitalize(#strings.toLowerCase(lang))}"
                    th:field="*{favouriteLanguage}"/>
             <span th:text="${#strings.capitalize(#strings.toLowerCase(lang))}"></span>
+        </label>
+    </div>
+
+    <div class="form-row">
+        <label>OS:</label>
+        <label th:each="os : ${favouriteSystems}">
+            <input type="checkbox"
+                   th:value="${#strings.capitalize(#strings.toLowerCase(os))}"
+                   th:field="*{favouriteSystems}"/>
+            <span th:text="${#strings.capitalize(#strings.toLowerCase(os))}"></span>
         </label>
     </div>
 

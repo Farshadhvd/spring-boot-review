@@ -18,11 +18,15 @@
 <h2>Student Confirmation</h2>
 
 The following student is confirmed: <span th:text="${student.firstName} + ' ' + ${student.lastName}"/>
-<br>
-<br>
+<br><br>
 The Country is: <span th:text="${student.country.label}"/>
-<br>
-<br>
+<br><br>
 Favourite Language: <span th:text="${student.favouriteLanguage}"/>
+
+<br><br>
+Favourite Language:
+<ul>
+    <li th:each="os: ${student.favouriteSystems}" th:text="${os}">
+</ul>
 </body>
 </html>

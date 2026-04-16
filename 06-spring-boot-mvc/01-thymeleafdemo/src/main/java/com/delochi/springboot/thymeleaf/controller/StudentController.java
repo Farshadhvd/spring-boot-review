@@ -17,14 +17,17 @@ public class StudentController {
     @Value("${student.favourite.language.list}")
     private List<String> favouriteLanguages;
 
+    @Value("${student.favourite.os.list}")
+    private List<String> favouriteSystems;
+
     @GetMapping("/show-student-form")
     public String showStudentForm(Model model) {
         Student student = new Student();
 
         model.addAttribute("student",student);
         model.addAttribute("countries", Country.values());
-        favouriteLanguages.forEach(String::toUpperCase);
         model.addAttribute("favouriteLanguages", favouriteLanguages);
+        model.addAttribute("favouriteSystems", favouriteSystems);
         return "student-form";
     }
     @PostMapping("/process-student")
