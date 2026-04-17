@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Form</title>
+</head>
+<body>
+
+
+<style>
+    .form-row {
+        margin-bottom: 10px;
+    }
+    label {
+        display: inline-block;
+        width: 120px;
+    }
+    .error {
+        color:red
+    }
+</style>
+
+<i>Fill the form below. Fields with * are required.</i>
+
+<br><br>
+<form th:action="@{/process-form}" th:object="${customer}" method="post">
+
+    <div class="form-row">
+        <label>First Name: </label>
+        <input type="text" th:field="*{firstName}">
+    </div>
+
+    <div class="form-row">
+        <label>Last Name*: </label>
+        <input type="text" th:field="*{lastName}">
+        <span th:if="${#vars['org.springframework.validation.BindingResult.customer'].hasFieldErrors('lastName')}"
+              th:text="${#vars['org.springframework.validation.BindingResult.customer'].getFieldErrors('lastName')[0].defaultMessage}"
+              class="error">
+        </span>
+<!--        I have used ${#vars['org.springframework... instead of just #fields because I wanted to try using the
+existing models myself instead of spring MVC + thymeleaf integration layer objects like #fields that stands for these
+long term expressions-->
+    </div>
+
+    <input type="submit" value="send"/>
+</form>
+
+</body>
+</html>
